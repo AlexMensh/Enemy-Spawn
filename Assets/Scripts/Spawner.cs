@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private List<SpawnPoint> _spawnPoints;
-
     [SerializeField] private float _spawnDelay;
     [SerializeField] private int _maxEnemies;
 

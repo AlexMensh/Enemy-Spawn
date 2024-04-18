@@ -3,15 +3,14 @@ using UnityEngine;
 
 public class SpawnPoint : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> targets;
-
+    [SerializeField] private List<TargetPoint> _targets;
     [SerializeField] private Enemy enemyPrefab;
 
     public void SpawnEnemy()
     {
-        int targetIndex = Random.Range(0, targets.Count);
+        int targetIndex = Random.Range(0, _targets.Count);
 
         Enemy newEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
-        newEnemy.SetTarget(targets[targetIndex]);
+        newEnemy.GetTarget(_targets[targetIndex]);
     }
 }
